@@ -8,15 +8,15 @@ export const ToolbarLeftComponent = React.createClass({
 
   // react standard method
   componentDidMount: function(){
-      console.log("initial state")      
+      console.log("initial state")
   },
 
 
   render: function(){
-    
+
 
     return (
-      
+
 			<div className="headerbar-left">
 				<ul className="header-nav header-nav-options">
 					<li className="header-nav-brand" >
