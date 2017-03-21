@@ -28150,6 +28150,10 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _MenuLeftMerchant = __webpack_require__(312);
+
+	var _MenuLeftUIElement = __webpack_require__(313);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var MenuLeftComponent = exports.MenuLeftComponent = _react2.default.createClass({
@@ -28193,80 +28197,8 @@
 	            )
 	          )
 	        ),
-	        _react2.default.createElement(
-	          "li",
-	          { className: "gui-folder" },
-	          _react2.default.createElement(
-	            "a",
-	            null,
-	            _react2.default.createElement(
-	              "div",
-	              { className: "gui-icon" },
-	              _react2.default.createElement("i", { className: "md md-email" })
-	            ),
-	            _react2.default.createElement(
-	              "span",
-	              { className: "title" },
-	              "Merchant"
-	            )
-	          ),
-	          _react2.default.createElement(
-	            "ul",
-	            null,
-	            _react2.default.createElement(
-	              "li",
-	              null,
-	              _react2.default.createElement(
-	                "a",
-	                { href: "/#/app/about" },
-	                _react2.default.createElement(
-	                  "span",
-	                  { className: "title" },
-	                  "Customers"
-	                )
-	              )
-	            ),
-	            _react2.default.createElement(
-	              "li",
-	              null,
-	              _react2.default.createElement(
-	                "a",
-	                { href: "/#/app/main" },
-	                _react2.default.createElement(
-	                  "span",
-	                  { className: "title" },
-	                  "Order"
-	                )
-	              )
-	            ),
-	            _react2.default.createElement(
-	              "li",
-	              null,
-	              _react2.default.createElement(
-	                "a",
-	                { href: "../../html/mail/reply.html" },
-	                _react2.default.createElement(
-	                  "span",
-	                  { className: "title" },
-	                  "Promos"
-	                )
-	              )
-	            ),
-	            _react2.default.createElement(
-	              "li",
-	              null,
-	              _react2.default.createElement(
-	                "a",
-	                { href: "../../html/mail/message.html" },
-	                _react2.default.createElement(
-	                  "span",
-	                  { className: "title" },
-	                  "History"
-	                )
-	              )
-	            )
-	          )
-	        )
+	        _react2.default.createElement(_MenuLeftMerchant.MenuLeftMerchantComponent, null),
+	        _react2.default.createElement(_MenuLeftUIElement.MenuLeftUIElementComponent, null)
 	      )
 	    );
 	  }
@@ -32187,6 +32119,352 @@
 	};
 
 	exports.default = merchantReducer;
+
+/***/ },
+/* 312 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.MenuLeftMerchantComponent = undefined;
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var MenuLeftMerchantComponent = exports.MenuLeftMerchantComponent = _react2.default.createClass({
+	  displayName: "MenuLeftMerchantComponent",
+
+
+	  render: function render() {
+	    return _react2.default.createElement(
+	      "li",
+	      { className: "gui-folder" },
+	      _react2.default.createElement(
+	        "a",
+	        null,
+	        _react2.default.createElement(
+	          "div",
+	          { className: "gui-icon" },
+	          _react2.default.createElement("i", { className: "md md-email" })
+	        ),
+	        _react2.default.createElement(
+	          "span",
+	          { className: "title" },
+	          "Merchant"
+	        )
+	      ),
+	      _react2.default.createElement(
+	        "ul",
+	        null,
+	        _react2.default.createElement(
+	          "li",
+	          null,
+	          _react2.default.createElement(
+	            "a",
+	            { href: "/#/app/about" },
+	            _react2.default.createElement(
+	              "span",
+	              { className: "title" },
+	              "Customers"
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          "li",
+	          null,
+	          _react2.default.createElement(
+	            "a",
+	            { href: "/#/app/main" },
+	            _react2.default.createElement(
+	              "span",
+	              { className: "title" },
+	              "Order"
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          "li",
+	          null,
+	          _react2.default.createElement(
+	            "a",
+	            { href: "../../html/mail/reply.html" },
+	            _react2.default.createElement(
+	              "span",
+	              { className: "title" },
+	              "Promos"
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          "li",
+	          null,
+	          _react2.default.createElement(
+	            "a",
+	            { href: "../../html/mail/message.html" },
+	            _react2.default.createElement(
+	              "span",
+	              { className: "title" },
+	              "History"
+	            )
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+
+/***/ },
+/* 313 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.MenuLeftUIElementComponent = undefined;
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var MenuLeftUIElementComponent = exports.MenuLeftUIElementComponent = _react2.default.createClass({
+	  displayName: "MenuLeftUIElementComponent",
+
+
+	  render: function render() {
+	    return _react2.default.createElement(
+	      "li",
+	      { className: "gui-folder" },
+	      _react2.default.createElement(
+	        "a",
+	        null,
+	        _react2.default.createElement(
+	          "div",
+	          { className: "gui-icon" },
+	          _react2.default.createElement("i", { className: "fa fa-puzzle-piece fa-fw" })
+	        ),
+	        _react2.default.createElement(
+	          "span",
+	          { className: "title" },
+	          "UI elements"
+	        )
+	      ),
+	      _react2.default.createElement(
+	        "ul",
+	        null,
+	        _react2.default.createElement(
+	          "li",
+	          null,
+	          _react2.default.createElement(
+	            "a",
+	            { href: "../../html/ui/colors.html" },
+	            _react2.default.createElement(
+	              "span",
+	              { className: "title" },
+	              "Colors"
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          "li",
+	          null,
+	          _react2.default.createElement(
+	            "a",
+	            { href: "../../html/ui/typography.html" },
+	            _react2.default.createElement(
+	              "span",
+	              { className: "title" },
+	              "Typography"
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          "li",
+	          null,
+	          _react2.default.createElement(
+	            "a",
+	            { href: "../../html/ui/cards.html" },
+	            _react2.default.createElement(
+	              "span",
+	              { className: "title" },
+	              "Cards"
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          "li",
+	          null,
+	          _react2.default.createElement(
+	            "a",
+	            { href: "../../html/ui/buttons.html" },
+	            _react2.default.createElement(
+	              "span",
+	              { className: "title" },
+	              "Buttons"
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          "li",
+	          null,
+	          _react2.default.createElement(
+	            "a",
+	            { href: "../../html/ui/lists.html" },
+	            _react2.default.createElement(
+	              "span",
+	              { className: "title" },
+	              "Lists"
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          "li",
+	          null,
+	          _react2.default.createElement(
+	            "a",
+	            { href: "../../html/ui/tabs.html" },
+	            _react2.default.createElement(
+	              "span",
+	              { className: "title" },
+	              "Tabs"
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          "li",
+	          null,
+	          _react2.default.createElement(
+	            "a",
+	            { href: "../../html/ui/accordions.html" },
+	            _react2.default.createElement(
+	              "span",
+	              { className: "title" },
+	              "Accordions"
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          "li",
+	          null,
+	          _react2.default.createElement(
+	            "a",
+	            { href: "../../html/ui/messages.html" },
+	            _react2.default.createElement(
+	              "span",
+	              { className: "title" },
+	              "Messages"
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          "li",
+	          null,
+	          _react2.default.createElement(
+	            "a",
+	            { href: "../../html/ui/offcanvas.html" },
+	            _react2.default.createElement(
+	              "span",
+	              { className: "title" },
+	              "Off-canvas"
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          "li",
+	          null,
+	          _react2.default.createElement(
+	            "a",
+	            { href: "../../html/ui/grid.html" },
+	            _react2.default.createElement(
+	              "span",
+	              { className: "title" },
+	              "Grid"
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          "li",
+	          { className: "gui-folder" },
+	          _react2.default.createElement(
+	            "a",
+	            { href: "javascript:void(0);" },
+	            _react2.default.createElement(
+	              "span",
+	              { className: "title" },
+	              "Icons"
+	            )
+	          ),
+	          _react2.default.createElement(
+	            "ul",
+	            null,
+	            _react2.default.createElement(
+	              "li",
+	              null,
+	              _react2.default.createElement(
+	                "a",
+	                { href: "../../html/ui/icons/materialicons.html" },
+	                _react2.default.createElement(
+	                  "span",
+	                  { className: "title" },
+	                  "Material Design Icons"
+	                )
+	              )
+	            ),
+	            _react2.default.createElement(
+	              "li",
+	              null,
+	              _react2.default.createElement(
+	                "a",
+	                { href: "../../html/ui/icons/fontawesome.html" },
+	                _react2.default.createElement(
+	                  "span",
+	                  { className: "title" },
+	                  "Font Awesome"
+	                )
+	              )
+	            ),
+	            _react2.default.createElement(
+	              "li",
+	              null,
+	              _react2.default.createElement(
+	                "a",
+	                { href: "../../html/ui/icons/glyphicons.html" },
+	                _react2.default.createElement(
+	                  "span",
+	                  { className: "title" },
+	                  "Glyphicons"
+	                )
+	              )
+	            ),
+	            _react2.default.createElement(
+	              "li",
+	              null,
+	              _react2.default.createElement(
+	                "a",
+	                { href: "../../html/ui/icons/skycons.html" },
+	                _react2.default.createElement(
+	                  "span",
+	                  { className: "title" },
+	                  "Skycons"
+	                )
+	              )
+	            )
+	          )
+	        )
+	      )
+	    );
+	  }
+
+	});
 
 /***/ }
 /******/ ]);
