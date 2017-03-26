@@ -17,8 +17,6 @@ export const MenuLeftComponent = React.createClass({
 
 
     render: function(){
-
-
       return (
         <div>
           <ul id="main-menu" className="gui-controls">
@@ -30,12 +28,8 @@ export const MenuLeftComponent = React.createClass({
           	</li>
           	<MenuLeftMerchantComponent />
             <MenuLeftUIElementComponent />
-
           </ul>
-
         </div>
-
-
       )
     }
 })

@@ -26,6 +26,6 @@ export const ContentTaskList2Component = React.createClass({
 					</div>
   			</div>
   		</div>
-      )
+    )
   }
 })

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export const ContentTaskFormComponent = (props) => {
+export const FormComponent = (props) => {
 
     return (
         <div>
@@ -12,7 +12,7 @@ export const ContentTaskFormComponent = (props) => {
                   <button type="button" className="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                   <h2 className="modal-title" id="myModalLabel">Add Item</h2>
                 </div>
-                <form className="form" onSubmit={ (event) => props.handleSubmit(event)}>
+                <form className="form" onSubmit={ (event) => props.onHandleSubmit(event) }>
                   <div className="modal-body" style={{"padding": "18px"}}>
 
 										<div className="form-group">
