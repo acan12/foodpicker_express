@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 
-import { CardComponent } from '../components/cards/CardComponent';
+import { CardComponent } from '../components/cards/CRUDCardComponent';
 import { addItemAction } from '../actions/CustomerAction';
 //seeds
 import { seeds } from '../../../seeds';
@@ -11,10 +11,16 @@ class FoodPlacesContent extends Component {
     const fields = ['#', 'Name']
     const data = seeds.places;
     // var data = this.props.merchantReducer;
-    const dataFields = [ fields, data ]
+    const dataFields = [
+      fields,
+      data,
+    ]
 
     const title = 'FOOD PLACES'
-    const titleStyle = {'float': 'right', 'margin': '0px', 'color': '#ababab'};
+    const titleStyle = {
+      'float': 'right',
+      'margin': '0px',
+      'color': '#ababab' };
 
     return (
       <div>
@@ -25,8 +31,7 @@ class FoodPlacesContent extends Component {
               titleStyle={ titleStyle }
               dataFields={ dataFields }
               onHandleClick={ () => this.props.handleClick() }
-              onHandleSubmit={ (event) => this.props.handleSubmit(event) }/>
-						<em className='text-caption'>Default table</em>
+              onHandleSubmit={ (event) => this.props.handleSubmit(event) } />
 					</div>
   			</div>
   		</div>
