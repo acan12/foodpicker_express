@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { CardComponent } from '../components/cards/CRUDCardComponent';
+import { CRUDCardComponent } from '../components/cards/CRUDCardComponent';
 import { addItemAction } from '../actions/CustomerAction';
 //seeds
 import { seeds } from '../../../seeds';
@@ -28,7 +28,7 @@ class CustomersContent extends Component {
       <div>
         <div className='section-body col-md-5'>
 	        <div className='row'>
-						<CardComponent
+						<CRUDCardComponent
               title={ title }
               titleStyle={ titleStyle }
               dataFields={ dataFields }

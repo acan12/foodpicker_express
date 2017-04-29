@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-
 import { FormComponent } from '../../components/FormComponent';
 import { ListComponent } from '../../components/ListComponent';
 
 
-export const CardComponent = (props) => {
+export const CRUDCardComponent = (props) => {
   return (
     <div className="card">
       <div className="card-body">

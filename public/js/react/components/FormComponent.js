@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { SelectOptionComponent } from './basic/SelectOptionComponent'
+import { InputTextComponent } from './basic/InputTextComponent'
 
 export const FormComponent = (props) => {
 
@@ -15,10 +17,7 @@ export const FormComponent = (props) => {
                 <form className="form" onSubmit={ (event) => props.onHandleSubmit(event) }>
                   <div className="modal-body" style={{"padding": "18px"}}>
 
-										<div className="form-group">
-											<input type="text" className="form-control" id="topic" />
-											<label htmlFor="topic">Topic</label>
-										</div>
+										<InputTextComponent label="Topic" />
 										<div className="form-group">
 											<input type="text" className="form-control" id="question" />
 											<label htmlFor="question">Question</label>
@@ -27,14 +26,7 @@ export const FormComponent = (props) => {
 											<input type="text" className="form-control" id="answer" />
 											<label htmlFor="answer">Answer</label>
 										</div>
-										<div className="form-group">
-										  <select id="gender" name="gender" className="form-control">
-												<option value="">&nbsp;</option>
-												<option value="male">Male</option>
-												<option value="female">Female</option>
-											</select>
-											<label htmlFor="gender">Gender</label>
-                    </div>
+										<SelectOptionComponent />
 
                   </div>
                   <div className="modal-footer" style={{"borderTop": "0px"}}>
