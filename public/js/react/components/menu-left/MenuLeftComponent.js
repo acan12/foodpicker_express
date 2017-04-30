@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { MenuLeftMerchantComponent } from "./MenuLeftMerchant";
-import { MenuLeftUIElementComponent } from './MenuLeftUIElement';
+import { MenuLeftMerchantSubComponent } from "./MenuLeftMerchantSubComponent";
+import { MenuLeftUIElementSubComponent } from './MenuLeftUIElementSubComponent';
 
 export const MenuLeftComponent = React.createClass({
 
@@ -26,8 +26,8 @@ export const MenuLeftComponent = React.createClass({
           			<span className="title">Dashboard</span>
           		</a>
           	</li>
-          	<MenuLeftMerchantComponent />
-            <MenuLeftUIElementComponent />
+          	<MenuLeftMerchantSubComponent />
+            <MenuLeftUIElementSubComponent />
           </ul>
         </div>
       )

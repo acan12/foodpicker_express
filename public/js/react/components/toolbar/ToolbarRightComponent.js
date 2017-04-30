@@ -8,12 +8,12 @@ export const ToolbarRightComponent = React.createClass({
 
   // react standard method
   componentDidMount: function(){
-      console.log("initial state")      
+      console.log("initial state")
   },
 
 
   render: function(){
-    
+
 
     return (
         <div className="headerbar-right">

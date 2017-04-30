@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export const MenuLeftMerchantComponent = React.createClass({
+export const MenuLeftMerchantSubComponent = React.createClass({
 
   render: () => {
     return (

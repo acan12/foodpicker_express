@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export const MenuLeftUIElementComponent = React.createClass({
+export const MenuLeftUIElementSubComponent = React.createClass({
 
   render: () => {
     return (

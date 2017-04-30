@@ -1,11 +1,11 @@
 import { createStore, combineReducers, applyMiddleware } from "redux"
 import logger from "redux-logger";
 import thunk from "redux-thunk";
-import merchantReducer from "./reducers/merchantReducer";
+import customerReducer from "./reducers/customerReducer";
 
 
 const store = createStore(combineReducers(
-    { merchantReducer }),
+    { customerReducer }),
     {},
     applyMiddleware(thunk, logger())
   );

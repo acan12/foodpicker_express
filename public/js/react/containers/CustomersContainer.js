@@ -1,22 +1,28 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { CRUDCardComponent } from '../components/cards/CRUDCardComponent';
-import { addItemAction } from '../actions/CustomerAction';
+import { getListAction, addItemAction } from '../actions/CustomerAction';
 //seeds
 import { seeds } from '../../../seeds';
+// helper
+import { json } from '../helper/json';
 
-class FoodPlacesContent extends Component {
+class CustomersContainer extends Component {
   render() {
-    const fields = ['#', 'Name']
-    const data = seeds.places;
-    // var data = this.props.merchantReducer;
-    const dataFields = [
-      fields,
-      data,
-    ]
 
-    const title = 'FOOD PLACES'
+    const defineKeys = ['id','phone'];
+
+    const titles = {id: '#', name: 'Name', phone: 'Phone' }
+    const titlesFilter = json.filter(titles, defineKeys)
+    // const dataFilter = seeds.customers.map(item => json.filter(item, defineKeys));
+    const dataFilter = this.props.customerReducer.map(item => json.filter(item, defineKeys));;
+    console.log('data===', dataFilter)
+    const dataResources = [
+      titlesFilter,
+      dataFilter,
+    ]
+    const title = 'CUSTOMERS'
     const titleStyle = {
       'float': 'right',
       'margin': '0px',
@@ -29,7 +35,7 @@ class FoodPlacesContent extends Component {
 						<CRUDCardComponent
               title={ title }
               titleStyle={ titleStyle }
-              dataFields={ dataFields }
+              dataResources={ dataResources }
               onHandleClick={ () => this.props.handleClick() }
               onHandleSubmit={ (event) => this.props.handleSubmit(event) } />
 					</div>
@@ -51,20 +57,18 @@ class FoodPlacesContent extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    merchantReducer: state.merchantReducer
+    customerReducer: state.customerReducer
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     handleClick: () => {
-      alert('dongo')
-      dispatch({
-        type: 'FETCH_ALL',
-        value: 2,
-        topic: 'MyTopic',
-        question: 'question now'
-      })
+
+      setTimeout(() => {
+          dispatch(getListAction());
+      }, 1000)
+
     },
     handleSubmit: (event) => {
       alert("call form post")
@@ -84,4 +88,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect( mapStateToProps, mapDispatchToProps )(FoodPlacesContent);
+export default connect( mapStateToProps, mapDispatchToProps )(CustomersContainer);

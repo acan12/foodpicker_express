@@ -6,11 +6,11 @@ import { addItemAction } from '../actions/CustomerAction';
 //seeds
 import { seeds } from '../../../seeds';
 
-class OrderContent extends Component {
+class OrderContainer extends Component {
   render() {
     const fields = ['#', 'Caption', 'Transaction Date', 'Order By']
     const data = seeds.orders;
-    // var data = this.props.merchantReducer;
+    // var data = this.props.customerReducer;
     const dataFields = [
       fields,
       data,
@@ -51,7 +51,7 @@ class OrderContent extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    merchantReducer: state.merchantReducer
+    customerReducer: state.customerReducer
   }
 }
 
@@ -84,4 +84,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect( mapStateToProps, mapDispatchToProps )(OrderContent);
+export default connect( mapStateToProps, mapDispatchToProps )(OrderContainer);

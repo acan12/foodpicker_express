@@ -1,24 +1,22 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { connect } from 'react-redux';
 
 import { CRUDCardComponent } from '../components/cards/CRUDCardComponent';
 import { addItemAction } from '../actions/CustomerAction';
 //seeds
 import { seeds } from '../../../seeds';
-// helper
-import { json } from '../helper/json';
 
-class CustomersContent extends Component {
+class FoodPlacesContainer extends Component {
   render() {
-    const fields = ['#', 'Name', 'Phone']
-    // const data = seeds.customers;
-    const data = seeds.customers.map(item => json.filter(item, ['id', 'name', 'phone']));
-    // var data = this.props.merchantReducer;
+    const fields = ['#', 'Name']
+    const data = seeds.places;
+    // var data = this.props.customerReducer;
     const dataFields = [
       fields,
       data,
     ]
-    const title = 'CUSTOMERS'
+
+    const title = 'FOOD PLACES'
     const titleStyle = {
       'float': 'right',
       'margin': '0px',
@@ -53,7 +51,7 @@ class CustomersContent extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    merchantReducer: state.merchantReducer
+    customerReducer: state.customerReducer
   }
 }
 
@@ -86,4 +84,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect( mapStateToProps, mapDispatchToProps )(CustomersContent);
+export default connect( mapStateToProps, mapDispatchToProps )(FoodPlacesContainer);
