@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { FormComponent } from '../../components/FormComponent';
 import { ListComponent } from '../../components/ListComponent';
+import { LoadingComponent } from '../basic/LoadingComponent';
 
 
 export const CRUDCardComponent = (props) => {
@@ -12,6 +13,7 @@ export const CRUDCardComponent = (props) => {
         <button type="button" className="btn ink-reaction btn-raised btn-primary" onClick={ props.onHandleClick }>REFRESH</button>
         &nbsp;
         <button type="button" href="#newTaskForm" data-toggle="modal" className="btn ink-reaction btn-raised btn-primary">FORM</button>
+        <LoadingComponent isLoading={ props.isLoading }/>
         <ListComponent dataResources={ props.dataResources } />
       </div>
     </div>

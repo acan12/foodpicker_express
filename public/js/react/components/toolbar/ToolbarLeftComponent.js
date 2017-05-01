@@ -2,13 +2,13 @@ import React, { Component } from "react";
 
 export const ToolbarLeftComponent = React.createClass({
   getInitialState: function () {
-      console.log("initial state")
+      console.log("TOOLBAR_LEFT getInitialState")
       return {list: []}
   },
 
   // react standard method
   componentDidMount: function(){
-      console.log("initial state")
+      console.log("TOOLBAR_LEFT componentDidMount")
   },
 
 

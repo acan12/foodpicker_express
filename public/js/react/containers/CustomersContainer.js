@@ -2,22 +2,20 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { CRUDCardComponent } from '../components/cards/CRUDCardComponent';
-import { getListAction, addItemAction } from '../actions/CustomerAction';
-//seeds
-import { seeds } from '../../../seeds';
+import { showLoading, getListAction, addItemAction } from '../actions/CustomerAction';
+
 // helper
 import { json } from '../helper/json';
 
 class CustomersContainer extends Component {
   render() {
 
-    const defineKeys = ['id','phone'];
+    const DEFINE_COLUMN_KEYS = ['id', 'name', 'phone', 'address'];
 
-    const titles = {id: '#', name: 'Name', phone: 'Phone' }
-    const titlesFilter = json.filter(titles, defineKeys)
-    // const dataFilter = seeds.customers.map(item => json.filter(item, defineKeys));
-    const dataFilter = this.props.customerReducer.map(item => json.filter(item, defineKeys));;
-    console.log('data===', dataFilter)
+    const titles = {id: '#', name: 'Name', phone: 'Phone', address: 'Address' }
+    const titlesFilter = json.filter(titles, DEFINE_COLUMN_KEYS)
+    const dataFilter = this.props.customerReducer.data.map(item => json.filter(item, DEFINE_COLUMN_KEYS));
+
     const dataResources = [
       titlesFilter,
       dataFilter,
@@ -33,6 +31,7 @@ class CustomersContainer extends Component {
         <div className='section-body col-md-5'>
 	        <div className='row'>
 						<CRUDCardComponent
+              isLoading={ this.props.loadingReducer.isLoading }
               title={ title }
               titleStyle={ titleStyle }
               dataResources={ dataResources }
@@ -57,17 +56,19 @@ class CustomersContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    customerReducer: state.customerReducer
+    loadingReducer: state.loadingReducer,
+    customerReducer: state.customerReducer,
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     handleClick: () => {
-
+      dispatch(showLoading(true));
       setTimeout(() => {
+          dispatch(showLoading(false));
           dispatch(getListAction());
-      }, 1000)
+      }, 2000)
 
     },
     handleSubmit: (event) => {

@@ -1,18 +1,13 @@
-let initialState = [
-  {
-    id: '100',
-    name: 'myname',
-    address: 'myaddress',
-    phone: 'myphone'
-  }
-]
+//seeds
+import { seeds } from '../../../seeds';
+
+let initialState = { data: seeds.customers };
 
 const customerReducer = (state = initialState, action) => {
-  console.log('enter reducer')
   switch (action.type){
     case "REFRESH_DATA":
-      console.log("masuk reducer LOAD_DATA")
-      state = state.concat([action.payload])
+      console.log("masuk reducer REFRESH_DATA")
+      state = { data: state.data.concat([action.payload]) }
       break;
 
     case "GET_ALL_DATA":

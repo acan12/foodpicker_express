@@ -2,7 +2,6 @@ import React, { Component } from "react"
 import { connect } from "react-redux";
 
 export const ListComponent = (props) => {
-  console.log('call listCOmponent')
   var columns = props.dataResources[0];
   var items = props.dataResources[1];
 

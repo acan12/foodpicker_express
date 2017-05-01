@@ -6,13 +6,13 @@ export const MenuLeftComponent = React.createClass({
 
     // react standard method
     getInitialState: function () {
-        console.log("initial state")
+        console.log("MENU_LEFT getInitialState")
         return {list: []}
     },
 
     // react standard method
     componentDidMount: function(){
-        console.log("initial state")
+        console.log("MENU_LEFT componentDidMount")
     },
 
 
