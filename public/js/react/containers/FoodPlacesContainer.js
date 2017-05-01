@@ -2,18 +2,22 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 
 import { CRUDCardComponent } from '../components/cards/CRUDCardComponent';
-import { addItemAction } from '../actions/CustomerAction';
-//seeds
-import { seeds } from '../../../seeds';
+import { showLoading, getPlacesAction } from '../actions/FoodPlacesAction';
+
+// helper
+import { json } from '../helper/json';
 
 class FoodPlacesContainer extends Component {
   render() {
-    const fields = ['#', 'Name']
-    const data = seeds.places;
+    const DEFINE_COLUMN_KEYS = ['id', 'name']
+
+    const titles = { id: '#', name: 'Name' }
+    const titlesFilter = json.filter(titles, DEFINE_COLUMN_KEYS)
     // var data = this.props.customerReducer;
-    const dataFields = [
-      fields,
-      data,
+    const dataFilter = this.props.foodplacesReducer.data.map(item => json.filter(item, DEFINE_COLUMN_KEYS));
+    const dataResources = [
+      titlesFilter,
+      dataFilter,
     ]
 
     const title = 'FOOD PLACES'
@@ -27,9 +31,10 @@ class FoodPlacesContainer extends Component {
         <div className='section-body col-md-5'>
 	        <div className='row'>
 						<CRUDCardComponent
+              isLoading={ this.props.loadingReducer.isLoading }
               title={ title }
               titleStyle={ titleStyle }
-              dataFields={ dataFields }
+              dataResources={ dataResources }
               onHandleClick={ () => this.props.handleClick() }
               onHandleSubmit={ (event) => this.props.handleSubmit(event) } />
 					</div>
@@ -51,20 +56,20 @@ class FoodPlacesContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    customerReducer: state.customerReducer
+    loadingReducer: state.loadingReducer,
+    foodplacesReducer: state.foodplacesReducer,
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     handleClick: () => {
-      alert('dongo')
-      dispatch({
-        type: 'FETCH_ALL',
-        value: 2,
-        topic: 'MyTopic',
-        question: 'question now'
-      })
+      dispatch(showLoading(true));
+      setTimeout(() => {
+          dispatch(showLoading(false));
+          dispatch(getPlacesAction());
+      }, 2000)
+
     },
     handleSubmit: (event) => {
       alert("call form post")
