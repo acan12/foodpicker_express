@@ -17,5 +17,4 @@ class Customers {
   }
 }
 const customers = new Customers();
-console.log(customers.all)
 export default customers;

@@ -11,7 +11,7 @@ import { ToolbarLeftComponent } from './js/react/components/toolbar/ToolbarLeftC
 import { ToolbarRightComponent } from './js/react/components/toolbar/ToolbarRightComponent';
 
 // containers -> smart component
-import ListComponent from './js/mobx/components/ListComponent'
+import ListComponent from './js/mobx/containers/ListComponent'
 // import CustomersContainer from './js/react/containers/CustomersContainer';
 // import FoodPlacesContainer from './js/react/containers/FoodPlacesContainer';
 // import OrderContainer from './js/react/containers/OrderContainer';
@@ -40,7 +40,7 @@ render (
 
 // content component rendering
 render (
-  <Provider customers={ stores.customers } >
+  <Provider customers={ stores.customers } orders={ stores.orders }>
     <Router history={hashHistory}>
       <Route path='/' component={ListComponent} />
     </Router>
