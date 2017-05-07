@@ -5,22 +5,20 @@ import {Router, Route, IndexRoute, hashHistory} from 'react-router';
 // service
 import { callApi } from './js/react/services/api';
 
-// action
-import { getListAction } from './js/react/actions/CustomerAction';
-
 // components & sub-components -> dumb component
 import { MenuLeftComponent } from './js/react/components/menu-left/MenuLeftComponent';
 import { ToolbarLeftComponent } from './js/react/components/toolbar/ToolbarLeftComponent';
 import { ToolbarRightComponent } from './js/react/components/toolbar/ToolbarRightComponent';
 
 // containers -> smart component
-import CustomersContainer from './js/react/containers/CustomersContainer';
-import FoodPlacesContainer from './js/react/containers/FoodPlacesContainer';
-import OrderContainer from './js/react/containers/OrderContainer';
+import ListComponent from './js/mobx/components/ListComponent'
+// import CustomersContainer from './js/react/containers/CustomersContainer';
+// import FoodPlacesContainer from './js/react/containers/FoodPlacesContainer';
+// import OrderContainer from './js/react/containers/OrderContainer';
 
 // redux
-import { Provider } from 'react-redux';
-import store from './js/react/store';
+import { Provider } from 'mobx-react';
+import stores from './js/mobx/stores';
 
 // Menu left panel
 render (
@@ -40,23 +38,11 @@ render (
     document.getElementById('AppToolbarRight')
 )
 
-
-
-
-store.dispatch((dispatch) => {
-    getListAction(dispatch)
-})
-
 // content component rendering
 render (
-  <Provider store={store} >
+  <Provider customers={ stores.customers } >
     <Router history={hashHistory}>
-      <Route path='/' component={CustomersContainer} />
-      <Route path='app' >
-        <Route path='places' component={FoodPlacesContainer} />
-        <Route path='main' component={CustomersContainer} />
-        <Route path='order' component={OrderContainer} />
-      </Route>
+      <Route path='/' component={ListComponent} />
     </Router>
   </Provider>,
   document.getElementById('AppContentTaskList')

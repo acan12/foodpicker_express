@@ -7,32 +7,32 @@ export const ListComponent = (props) => {
 
   return (
       <div>
-      <table className="table no-margin">
-      	<thead>
-      		<tr style={{"fontWeight": "bold", "color": "#ababab"}}>
-            {/* Global Component of tables fields */}
-            { Object.keys(columns).map((k, index) => {
+        <table className="table no-margin">
+        	<thead>
+        		<tr style={{"fontWeight": "bold", "color": "#ababab"}}>
+              {/* Global Component of tables fields */}
+              { Object.keys(columns).map((k, index) => {
+                return (
+                  <td key={ index }>{ columns[k] }</td>
+                )
+              })}
+        		</tr>
+        	</thead>
+        	<tbody>
+            {/* Global Component of tables content values */}
+            { items.reverse().map((item, index) => {
               return (
-                <td key={ index }>{ columns[k] }</td>
+                <tr key={ index }>
+                  { Object.keys(item).map((k, index) => {
+                    return (
+                      <td key={ index }>{ item[k] }</td>
+                    )
+                  })}
+            		</tr>
               )
             })}
-      		</tr>
-      	</thead>
-      	<tbody>
-          {/* Global Component of tables content values */}
-          { items.reverse().map((item, index) => {
-            return (
-              <tr key={ index }>
-                { Object.keys(item).map((k, index) => {
-                  return (
-                    <td key={ index }>{ item[k] }</td>
-                  )
-                })}
-          		</tr>
-            )
-          })}
-      	</tbody>
-      </table>
+        	</tbody>
+        </table>
       </div>
     )
 }
