@@ -2,25 +2,26 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 
 import { CRUDCardComponent } from '../components/cards/CRUDCardComponent';
-import { showLoading, getListAction, addItemAction } from '../actions/OrderAction';
+import { showLoading, getListAction, addItemAction } from '../actions/PromoAction';
 
 // helper
 import { json } from '../helper/json';
 
-class OrderContainer extends Component {
+class PromoContainer extends Component {
   render() {
-    const DEFINE_COLUMN_KEYS = ['id', 'caption', 'transaction', 'customer']
+    const DEFINE_COLUMN_KEYS = ['id', 'title', 'content']
 
-    const titles = {id: '#', caption: 'Caption', transaction: 'Transaction Date', customer: 'Customer' }
+    const titles = {id: '#', title: 'Title', content: 'Content' }
     const titlesFilter = json.filter(titles, DEFINE_COLUMN_KEYS)
-    const dataFilter = this.props.orderReducer.data.map(item => json.filter(item, DEFINE_COLUMN_KEYS));
-    console.log('dataFilter=', this.props.orderReducer.data);
+    
+    const dataFilter = this.props.promoReducer.data.map(item => json.filter(item, DEFINE_COLUMN_KEYS));
+
     const dataResources = [
       titlesFilter,
       dataFilter,
     ];
 
-    const title = 'ORDER'
+    const title = 'PROMO'
     const titleStyle = {
       'float': 'right',
       'margin': '0px',
@@ -57,7 +58,7 @@ class OrderContainer extends Component {
 const mapStateToProps = (state) => {
   return {
     loadingReducer: state.loadingReducer,
-    orderReducer: state.orderReducer,
+    promoReducer: state.promoReducer,
   }
 }
 
@@ -89,4 +90,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect( mapStateToProps, mapDispatchToProps )(OrderContainer);
+export default connect( mapStateToProps, mapDispatchToProps )(PromoContainer);

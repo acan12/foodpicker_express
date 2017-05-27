@@ -6,6 +6,8 @@ import { showLoading, getListAction, addItemAction } from '../actions/CustomerAc
 
 // helper
 import { json } from '../helper/json';
+import { seeds } from '../../../seeds'
+
 
 class CustomersContainer extends Component {
   render() {

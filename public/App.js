@@ -5,18 +5,17 @@ import {Router, Route, IndexRoute, hashHistory} from 'react-router';
 // service
 import { callApi } from './js/react/services/api';
 
-// action
-import { getListAction } from './js/react/actions/CustomerAction';
-
 // components & sub-components
 import { MenuLeftComponent } from './js/react/components/menu-left/MenuLeftComponent';
 import { ToolbarLeftComponent } from './js/react/components/toolbar/ToolbarLeftComponent';
 import { ToolbarRightComponent } from './js/react/components/toolbar/ToolbarRightComponent';
 
 // containers -> group of component
+import DashboardContainer from './js/react/containers/DashboardContainer';
 import CustomersContainer from './js/react/containers/CustomersContainer';
 import FoodPlacesContainer from './js/react/containers/FoodPlacesContainer';
 import OrderContainer from './js/react/containers/OrderContainer';
+import PromoContainer from './js/react/containers/PromoContainer';
 
 // redux
 import { Provider } from 'react-redux';
@@ -40,23 +39,15 @@ render (
     document.getElementById('AppToolbarRight')
 )
 
-
-
-
-store.dispatch((dispatch) => {
-    getListAction(dispatch)
-})
-
 // content component rendering
 render (
   <Provider store={store} >
     <Router history={hashHistory}>
-      <Route path='/' component={CustomersContainer} />
-      <Route path='app' >
-        <Route path='places' component={FoodPlacesContainer} />
-        <Route path='main' component={CustomersContainer} />
-        <Route path='order' component={OrderContainer} />
-      </Route>
+      <Route path='/' component={DashboardContainer} />
+      <Route path='customers' component={CustomersContainer} />
+      <Route path='foodplaces' component={FoodPlacesContainer} />
+      <Route path='orders' component={OrderContainer} />
+      <Route path='promo' component={PromoContainer} />
     </Router>
   </Provider>,
   document.getElementById('AppContentTaskList')

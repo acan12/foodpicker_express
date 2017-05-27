@@ -12,15 +12,16 @@ export function getListAction() {
   var url = "http://localhost:3000/api/tasks"
 
   const actionRefresh = {
-    type: config.ACTION_REFRESH_DATA_CUSTOMERS,
+    type: config.ACTION_REFRESH_DATA_ORDERS,
     payload: {
       id: 12,
-      name: 'Anonymous',
-      address: 'Jakarta',
-      phone: '021-56578687',
+      caption: 'Anonymous',
+      transaction: '2017-07-12',
+      customer: 'A+',
     },
   }
 
+  console.log('host config:', config.api.host);
   // callApi(
   //   url,
   //   'GET',

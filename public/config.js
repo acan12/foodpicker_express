@@ -1,5 +1,11 @@
 const api = {
-  host: 'http://localhost:3000/api/tasks',
+  ACTION_REFRESH_DATA_CUSTOMERS: 'REFRESH_DATA_CUSTOMERS',
+  ACTION_REFRESH_DATA_FOODPLACES: 'REFRESH_DATA_FOODPLACES',
+  ACTION_REFRESH_DATA_ORDERS: 'REFRESH_DATA_ORDERS',
+  ACTION_REFRESH_DATA_PROMO: 'REFRESH_DATA_PROMO',
+  api: {
+    host: 'http://localhost:3000/api/tasks',
+  }
 }
 
-module.exports = {api};
+module.exports = api;

@@ -1,11 +1,12 @@
+//seeds
 import { seeds } from '../../../seeds';
 import config from '../../../config';
 
-let initialState = { data: seeds.customers };
+let initialState = { data: seeds.promos };
 
-const customerReducer = (state = initialState, action) => {
+const promoReducer = (state = initialState, action) => {
   switch (action.type){
-    case config.ACTION_REFRESH_DATA_CUSTOMERS:
+    case config.ACTION_REFRESH_DATA_PROMO:
       console.log("masuk reducer REFRESH_DATA")
       state = { data: state.data.concat([action.payload]) }
       break;
@@ -20,4 +21,4 @@ const customerReducer = (state = initialState, action) => {
   return state;
 }
 
-export default customerReducer;
+export default promoReducer;

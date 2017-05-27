@@ -11,7 +11,11 @@ import { ToolbarLeftComponent } from './js/react/components/toolbar/ToolbarLeftC
 import { ToolbarRightComponent } from './js/react/components/toolbar/ToolbarRightComponent';
 
 // containers -> smart component
-import ListComponent from './js/mobx/containers/ListComponent'
+import ListComponent from './js/mobx/containers/ListComponent';
+import CustomerListComponent from './js/mobx/containers/CustomerListComponent';
+import OrderListComponent from './js/mobx/containers/OrderListComponent';
+import FoodplacesListComponent from './js/mobx/containers/FoodplacesListComponent';
+
 // import CustomersContainer from './js/react/containers/CustomersContainer';
 // import FoodPlacesContainer from './js/react/containers/FoodPlacesContainer';
 // import OrderContainer from './js/react/containers/OrderContainer';
@@ -40,9 +44,18 @@ render (
 
 // content component rendering
 render (
-  <Provider customers={ stores.customers } orders={ stores.orders }>
+  <Provider
+    customers={ stores.customers }
+    orders={ stores.orders }
+    foodplaces={ stores.foodplaces } >
+
     <Router history={hashHistory}>
       <Route path='/' component={ListComponent} />
+      <Route path='/customers' component={CustomerListComponent} />
+      <Route path='/foodplaces' component={FoodplacesListComponent} />
+      <Route path='/orders' component={OrderListComponent} />
+      <Route path='/promos' component={ListComponent} />
+      <Route path='/histories' component={ListComponent} />
     </Router>
   </Provider>,
   document.getElementById('AppContentTaskList')

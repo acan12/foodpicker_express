@@ -12,15 +12,15 @@ export function getListAction() {
   var url = "http://localhost:3000/api/tasks"
 
   const actionRefresh = {
-    type: config.ACTION_REFRESH_DATA_CUSTOMERS,
+    type: config.ACTION_REFRESH_DATA_PROMO,
     payload: {
-      id: 12,
-      name: 'Anonymous',
-      address: 'Jakarta',
-      phone: '021-56578687',
+      id: 99,
+      title: 'Anonymous',
+      content: '50% Off for Today',
     },
   }
 
+  console.log('host config:', config.api.host);
   // callApi(
   //   url,
   //   'GET',
